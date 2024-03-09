@@ -44,5 +44,8 @@ If any city/location is not available in the API, the application will throw a t
 Hope everything will work fine! InCase you find any trouble using/running the application, kindly contact at:
 archis.datta3@gmail.com
 
+## Attaching ScreenShots
+
+![Paris Weather](weather-app\ScreenShots\mumbai.png)
 
 
