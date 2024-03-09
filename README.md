@@ -46,6 +46,6 @@ archis.datta3@gmail.com
 
 ## Attaching ScreenShots
 
-![Paris Weather](weather-app\ScreenShots\mumbai.png)
+![Paris Weather](weather-app\ScreenShots\mumbai.png?raw=true)
 
 
