@@ -9,16 +9,15 @@ This weather application, has a quite attractive UI and streamlined UX. The appl
 3) TimeAndLocationSection
 4) TemperatureAndDetailsSection
 5) ForeCastSection
-The application displays :
-1) Realtime weather details(temp, local time, date, real feel, humidity, wind speed, Sunrise, Sunset, High, Low, weather conditions[Haze, Clear, Cloudy, Smoke, Rain etc], all in a very
-   attractive UI.API
-3) Hourly Forecasts
-4) Daily Forecasts
 
 ## Key Features
-1) The background color dynamically changes based on a threshold temperature, indicating a blue background for cold weather locations and a yellowish-orange for hot weather locations.
-2) UI Icons show weather conditions, such as, Cloudy, Haze, Smoke, Clear, Rain etc
-3) Enabled with Toast Alerts for better user experience
+1) Dynamic Background :The background color dynamically changes based on a threshold temperature, indicating a blue background for cold weather locations and a yellowish-orange for hot weather locations.
+2) Real-time Weather Updates: Get instant access to current weather conditions, including temperature, humidity, wind speed, and more.
+3) Hourly and Daily Forecasts: Plan ahead with detailed hourly and daily forecasts, so you're always prepared for the changing weather.
+4) Location-Based Forecasting: Receive personalized weather forecasts based on your current location or any city you choose, ensuring accurate and relevant information.
+5) Customizable Units: Tailor the weather data to your preferences by choosing between metric or imperial units for temperature, wind speed, and more.
+6) Sleek and User-Friendly Interface: Enjoy a modern and intuitive user interface designed for ease of use and quick access to essential weather information.
+7) Beautiful Visualizations: Experience weather data come to life with stunning visualizations, including animated weather icons and dynamic backgrounds.
 
 ## How to run the application locally
 1) Clone the repository
