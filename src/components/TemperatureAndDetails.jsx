@@ -8,6 +8,8 @@ import {
 } from "@iconscout/react-unicons";
 import { formatToLocalTime, iconUrlFromCode } from "../services/weatherService";
 
+// THIS IS THE COMPONENT THAT DISPLAYS ALL THE WEATHER RELATED INFORMATION, THE TEMP, WEATHER COND, SUNRISE, SUNSET, 
+// HIGH, LOW
 function TemperatureAndDetails({
   weather: {
     details,
@@ -30,8 +32,13 @@ function TemperatureAndDetails({
       </div>
 
       <div className="flex flex-row items-center justify-between text-white py-3">
+         {/* ICON IS BASED ON THE weather.main value, i.e, Haze, Cloudy, Smoke, Clear, Raining, etc*/}
         <img src={iconUrlFromCode(icon)} alt="" className="w-20" />
+
+            {/* temperature display */}
         <p className="text-5xl">{`${temp.toFixed()}°`}</p>
+
+             {/* real feel, humidity and wind display */}
         <div className="flex flex-col space-y-2">
           <div className="flex font-light text-sm items-center justify-center">
             <UilTemperature size={18} className="mr-1" />
@@ -51,6 +58,7 @@ function TemperatureAndDetails({
         </div>
       </div>
 
+            {/* sunrise time, sunset time, high, low */}
       <div className="flex flex-row items-center justify-center space-x-2 text-white text-sm py-3">
         <UilSun />
         <p className="font-light">

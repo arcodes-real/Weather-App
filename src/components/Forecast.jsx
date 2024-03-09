@@ -1,6 +1,9 @@
 import React from "react";
 import { iconUrlFromCode } from "../services/weatherService";
 
+
+// THIS COMPONENT SHOWS THE HOURLY FORECAST AND DAILY FORECAST 
+// VALUES EXTRACTED FROM WEATHER FORECAST API
 function Forecast({ title, items }) {
   console.log(items);
   return (

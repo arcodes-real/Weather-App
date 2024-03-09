@@ -1,6 +1,7 @@
 import React from "react";
 import { formatToLocalTime } from "../services/weatherService";
 
+// destructuring the dt(date), timezone, name and country property from the weather object
 function TimeAndLocation({ weather: { dt, timezone, name, country } }) {
   return (
     <div>

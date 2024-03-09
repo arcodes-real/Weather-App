@@ -5,18 +5,25 @@ import { toast } from "react-toastify";
 function Inputs({ setQuery, units, setUnits }) {
   const [city, setCity] = useState("");
 
+  // function to change units [deg C <--> deg F]
   const handleUnitsChange = (e) => {
     const selectedUnit = e.currentTarget.name;
     if (units !== selectedUnit) setUnits(selectedUnit);
   };
 
+  // function to handle city search
   const handleSearchClick = () => {
     if (city !== "") setQuery({ q: city });
   };
 
+  // function to handle user's current location, getting access to user's current location using navigator.geolocation property
   const handleLocationClick = () => {
     if (navigator.geolocation) {
       toast.info("Fetching users location.");
+
+      // initiates a call to geolocation's API 'getCurrentPosition' method. 
+      // This method retrieves the current position of the device's geolocation information.
+      // from the position object I am extracting the lat and lon coord values and passing it to setQuery
       navigator.geolocation.getCurrentPosition((position) => {
         toast.success("Location fetched!");
         let lat = position.coords.latitude;

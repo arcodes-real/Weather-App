@@ -3,8 +3,8 @@ import { DateTime } from "luxon";
 const API_KEY = "1fa9ff4126d95b8db54f3897a208e91c";
 const BASE_URL = "http://api.openweathermap.org/data/2.5";
 
-// https://api.openweathermap.org/data/2.5/onecall?lat=48.8534&lon=2.3488&exclude=current,minutely,hourly,alerts&appid=1fa9ff4126d95b8db54f3897a208e91c&units=metric
 
+// function fetching weather data based on infoType, i.e, realtime-weather and weather-forecast
 const getWeatherData = (infoType, searchParams) => {
   console.log(infoType)
   console.log(searchParams)
@@ -46,6 +46,8 @@ const formatCurrentWeather = (data) => {
   };
 };
 
+
+// function fetching weather forecast
 const formatForecastWeather = (data) => {
   let { timezone, daily, hourly } = data;
   daily = daily.slice(1, 6).map((d) => {
@@ -67,7 +69,9 @@ const formatForecastWeather = (data) => {
   return { timezone, daily, hourly };
 };
 
+// this function is sending searchparams data to getWeatherData function, to structure the api endpoint
 const getFormattedWeatherData = async (searchParams) => {
+    // for realtime-weather
   const formattedCurrentWeather = await getWeatherData(
     "weather",
     searchParams
@@ -75,6 +79,7 @@ const getFormattedWeatherData = async (searchParams) => {
 
   const { lat, lon } = formattedCurrentWeather;
 
+  // for weather forecast
   const formattedForecastWeather = await getWeatherData("onecall", {
     lat,
     lon,
@@ -85,12 +90,18 @@ const getFormattedWeatherData = async (searchParams) => {
   return { ...formattedCurrentWeather, ...formattedForecastWeather };
 };
 
+// this function uses the luxon DateTime object to format the timestamp to local time
+// cccc - full name of the day of the week
+// dd - date of the month
+// LLL - abbreviated name of the month
+// yyyy - year
 const formatToLocalTime = (
   secs,
   zone,
   format = "cccc, dd LLL yyyy' | Local time: 'hh:mm a"
 ) =>  DateTime.fromSeconds(secs).setZone(zone).toFormat(format);
 
+// shows the weather condition, Haze, Cloudy, clear, Smoke, raining etc
 const iconUrlFromCode = (code) =>
   `http://openweathermap.org/img/wn/${code}@2x.png`;
 
